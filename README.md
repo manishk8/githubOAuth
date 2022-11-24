@@ -1,8 +1,8 @@
 Take a clone from github repo
-### `git clone`
+### `git clone https://github.com/manishk8/githubOAuth.git`
 
 Go to project directory
-### `cd easy-code-app`
+### `cd githubOAuth`
 
 Install node modules
 ### `npm install`
