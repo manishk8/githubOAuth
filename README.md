@@ -7,6 +7,16 @@ Go to project directory
 Install node modules
 ### `npm install`
 
+Start proxy server
+### `node src/server.js`
+
+<img width="713" alt="Screenshot 2022-11-28 at 10 11 46 PM" src="https://user-images.githubusercontent.com/23701638/204333251-8ae2ac9c-2ef4-4cf3-a52c-e7a6c60f62ed.png">
+
+
+
+
+
+Open another terminal with base path as current project\
 Runs the app in the development mode.\
 ### `npm start`
 
