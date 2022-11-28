@@ -3,6 +3,8 @@ import Repos from './components/repos';
 import Login from './components/login';
 import { useEffect, useState } from 'react';
 
+const SERVER_BASE_URL = 'http://localhost:8080/';
+const LOCAL_BASE_URL = 'http://localhost:3000';
 const CLIENT_ID = "ab38fc05857006b9182b";
 const CLIENT_SECRECT = "893decf464fe4aef4d26ccf533180f5ae88306aa";
 
@@ -23,7 +25,7 @@ function App() {
 
   useEffect(() => {
     if(codeValue && codeValue.length > 0) {
-      fetch(`https://github.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRECT}&code=${codeValue}`)
+      fetch(`${SERVER_BASE_URL}proxy/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRECT}&code=${codeValue}`)
         .then((res) => res.text())
         .then((json) => {
           let accessToken = json.split('&')[0];
@@ -42,7 +44,7 @@ function App() {
           })
           }
           else {
-            window.location.assign('http://localhost:3000');
+            window.location.assign(`${LOCAL_BASE_URL}`);
           }
         }).catch(err => {
           console.log(err)
@@ -56,7 +58,7 @@ function App() {
 
   const handleLogOut = () => {
     setAuthToken('')
-    window.location.assign('http://localhost:3000');
+    window.location.assign(`${LOCAL_BASE_URL}`);
   }
 
   return (
